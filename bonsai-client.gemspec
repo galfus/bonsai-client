@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.authors = ["Manu"]
   s.email = ["galfus@gmail.com"]
   s.date = Time.now.strftime('%Y-%m-%d')
-  s.summary = %q{A simple hot folder.}
+  s.summary = %q{Client for a Bonsai server.}
   s.description = %q{This gem is at an early stage of development. Please do not use it already.}
   s.licenses = ['MIT']
   s.homepage = "https://gitlab.com/galfuslab/bonsai-client"
