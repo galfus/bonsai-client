@@ -70,6 +70,16 @@ end
 
 task :default => :test
 
+desc "Push code to the remote respositories"
+task :push do
+  show_text ">> Pushing code to GitLab y GitHub"
+  puts ""
+  sh "git push origin master"
+  puts ""
+  sh "git push github master"
+  puts ""
+end
+
 desc "Release #{gem_file} (only repository, not RubyGems)"
 task :release => :build do
   show_text ">> Releasing #{gem_file}"
@@ -95,16 +105,6 @@ task :release => :build do
   puts ""
   sh "git push github master"
   show_release
-end
-
-desc "Push code to the remote respositories"
-task :push do
-  show_text ">> Pushing code to GitLab y GitHub"
-  puts ""
-  sh "git push origin master"
-  puts ""
-  sh "git push github master"
-  puts ""
 end
 
 desc "Build #{gem_file} into pkg folder"
