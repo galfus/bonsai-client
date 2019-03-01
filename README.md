@@ -40,11 +40,38 @@ src3 = bonsai.thumbnail_url(checksum: 'AF1...', size: :medium) # http://bonsai-s
 
 ## Development
 
-Test
+### Test
 
 ```bash
 bundle exec rake test
 ```
+
+### Rake tasks
+
+Crea una nueva versión de la gema (sin subirla a ruby gems pero sí a GitLab y GitHub):
+
+```bash
+rake release
+```
+
+Sube commits a los repositorios git:
+
+```bash
+rake push
+```
+
+Publica la última versión de la gema en Rubygems:
+
+```bash
+rake push
+```
+
+Muestar la versión actual de la gema:
+
+```bash
+rake version
+```
+
 
 ## License
 
