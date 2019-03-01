@@ -2,7 +2,7 @@ image: "ruby:2.4"
 
 before_script:
   - ruby -v
-  - gem install bundler  --no-ri --no-rdoc 
+  - gem install bundler --no-document
   - bundle install
 
 tests:
