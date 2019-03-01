@@ -16,6 +16,7 @@ module BonsaiClient
   #
   # @return [Client]
   def self.create(opts = {})
+    Client.new(opts)
   end
   
 end
