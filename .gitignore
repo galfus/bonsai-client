@@ -1,4 +1,7 @@
 
+# Local files
+NOTES.local.md
+
 # Specific environment configuration
 /config/environments/*
 !/config/environments/.keep
