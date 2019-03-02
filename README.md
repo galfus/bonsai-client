@@ -16,6 +16,8 @@ gem install bonsai_client
 
 ## Usage in shell
 
+Upload a file:
+
 ```bash
 bonsai_client upload --url="http://bonsai-server.com" --path="/path/to/file"
 ```
@@ -26,16 +28,16 @@ bonsai_client upload --url="http://bonsai-server.com" --path="/path/to/file"
 # Require Bonsai Client gem.
 require 'bonsai-client'
 
-# Creata a new instance of Bonsai client:
+# Create a new instance of Bonsai client:
 bonsai = BonsaiClient.new(url: 'http://bonsai-server.com')
 
 # Upload a file to a Bonsai server:
-result = bonsai.upload(path: '/path/to/file')
+response = bonsai.upload(path: '/path/to/my-file')
 
 # URL for a specific file in Bonsai sever:
-src1 = bonsai.thumbnail_url(checksum: 'AF1...') # http://bonsai-server.com/thumbnails/AF1...
-src2 = bonsai.thumbnail_url(name: 'myfile') # http://bonsai-server.com/...
-src3 = bonsai.thumbnail_url(checksum: 'AF1...', size: :medium) # http://bonsai-server.com/thumbnails/AF1.../size/medium
+src1 = bonsai.thumbnail_url(checksum: response[:data][:file_checksum]) 
+src2 = bonsai.thumbnail_url(name: 'my-file')
+src3 = bonsai.thumbnail_url(checksum: response[:data][:file_checksum]), size: :medium) 
 ```
 
 ## Development
@@ -49,28 +51,36 @@ BONSAI_SERVER_URL=https://xxx.yyy BONSAI_CLIENT_ID=zzz bundle exec rake test TES
 
 ### Rake tasks
 
-Crea una nueva versión de la gema (sin subirla a ruby gems pero sí a GitLab y GitHub):
+Create a new version:
 
 ```bash
 rake release
 ```
 
-Sube commits a los repositorios git:
+Push commits to git repositories (GitLab and GitHub)
 
 ```bash
 rake push
 ```
 
-Publica la última versión de la gema en Rubygems:
+Publish the current gem version to Rubygems:
 
 ```bash
 rake push
 ```
 
-Muestar la versión actual de la gema:
+Show current gem version:
 
 ```bash
 rake version
+```
+
+### Documentation
+
+Create documentation:
+
+```bash
+yardoc
 ```
 
 

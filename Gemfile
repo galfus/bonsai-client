@@ -5,4 +5,7 @@ gemspec
 
 group :test, :development do
   gem 'minitest-reporters'
+  gem 'yard'
+  gem 'redcarpet'
+  gem 'github-markup'
 end

@@ -14,7 +14,11 @@ require_all 'bonsai_client'
 
 module BonsaiClient
 
-  # Client for a Bonsai server.
+  # Create a new client for a Bonsai server.
+  #
+  # @param [Hash] opts Otions to create the client.
+  # @option opts [String] :url Bonsai server URL (such as https://bonsai-server.com)
+  # @option opts [String] :client_id Unique ID for each client
   #
   # @return [Client]
   def self.create(opts = {})

@@ -2,11 +2,20 @@ module BonsaiClient
   # Client for a Bonsai server.
   class Client
 
+    # @param [Hash] opts Otions to create the client.
+    # @option opts [String] :url Bonsai server URL (such as https://bonsai-server.com)
+    # @option opts [String] :client_id Unique ID for each client
     def initialize(opts = {})
       @url = opts[:url] || ''
       @client_id = opts[:client_id] || ''
     end
 
+    # Upload a file.
+    #
+    # @param [Hash] opts Otions to upload a file.
+    # @option opts [String] :path File path
+    #
+    # @return [Hash] Response from Bonsai server.
     def upload(opts = {})
       path = opts[:path] || ''
       raise_no_file_path! if path.empty?
