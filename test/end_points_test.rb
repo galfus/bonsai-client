@@ -1,10 +1,11 @@
 require 'test_helper'
 
-class TestGemEndPoints < Minitest::Test
+class TestEndPoints < Minitest::Test
 
   def test_create_client
     client = BonsaiClient.create(
-      url: 'http://bonsai-server.com'
+      url: 'http://bonsai-server.com',
+      client_id: 'test'
     )
     refute_nil client
   end

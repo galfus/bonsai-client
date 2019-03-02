@@ -43,7 +43,8 @@ src3 = bonsai.thumbnail_url(checksum: 'AF1...', size: :medium) # http://bonsai-s
 ### Test
 
 ```bash
-bundle exec rake test
+BONSAI_SERVER_URL=https://xxx.yyy BONSAI_CLIENT_ID=zzz bundle exec rake test
+BONSAI_SERVER_URL=https://xxx.yyy BONSAI_CLIENT_ID=zzz bundle exec rake test TEST=test/upload_file_test.rb
 ```
 
 ### Rake tasks
