@@ -3,6 +3,8 @@
 
 # Bonsai Client
 
+![Logo of Bonsai](bonsai.png)
+
 ### NOTE
 
 This gem is at an early stage of development. Please do not use it already.
