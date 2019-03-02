@@ -8,16 +8,23 @@ module BonsaiClient
     end
 
     def upload(opts = {})
-      # puts '------ upload'
-      # p opts
-      # puts upload_url
-      {}
+      path = opts[:path] || ''
+      raise_no_file_path! if path.empty?
+      response = RestClient.post(
+        upload_url,
+        file: File.new(path, 'rb')
+      )
+      JSON.parse(response.to_str, symbolize_names: true)
     end
 
     private
 
+    def raise_no_file_path!
+      raise 'No file path'
+    end
+
     def upload_url
-      "#{@url}/api/#{@client_id}/upload"
+      "#{@url}/api/client/#{@client_id}/upload"
     end
 
   end
