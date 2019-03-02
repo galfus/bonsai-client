@@ -98,6 +98,8 @@ task :release => :build do
     show_error_and_exit! "Aborting release"
   end
   puts ""
+  sh "yardoc"
+  puts ""
   sh "git commit --allow-empty -m 'Release #{version}'"
   sh "git tag v#{version}"
   puts ""
