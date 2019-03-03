@@ -1,7 +1,9 @@
 # Changelog
 
 ## [Unreleased]
-* ...
+
+## [0.2.1] - 2019-03-03
+* Fix bonsai_client command installation.
 
 ## [0.2.0] - 2019-03-03
 * bonsai_client command.
