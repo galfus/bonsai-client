@@ -18,6 +18,13 @@ This gem is at an early stage of development. Please do not use it already.
 gem install bonsai_client
 ```
 
+Note: If you're using `rbenv` and there is no bonsai_client command after installing the gem try:
+
+```
+rm /Users/user-name/.rbenv/shims/.rbenv-shim
+rbenv rehash
+```
+
 ## Usage in shell
 
 Upload a file:
