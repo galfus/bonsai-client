@@ -30,7 +30,7 @@ rbenv rehash
 Upload a file:
 
 ```bash
-bonsai_client upload --url="http://bonsai-server.com" --path=/path/to/file --client-id=xxx
+bonsai_client upload --url="http://xxx.yyy" --path=/path/to/file --client-id=zzz
 ```
 
 ## Usage in ruby code
@@ -40,7 +40,7 @@ bonsai_client upload --url="http://bonsai-server.com" --path=/path/to/file --cli
 require 'bonsai-client'
 
 # Create a new instance of Bonsai client:
-bonsai = BonsaiClient.new(url: 'http://bonsai-server.com')
+bonsai = BonsaiClient.new(url: 'http://xxx.yyy', client_id: 'zzz')
 
 # Upload a file to a Bonsai server:
 response = bonsai.upload(path: '/path/to/my-file')

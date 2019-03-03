@@ -14,7 +14,6 @@ Gem::Specification.new do |s|
   s.description = %q{This gem is at an early stage of development. Please do not use it already.}
   s.licenses = ['MIT']
   s.homepage = 'https://gitlab.com/galfuslab/bonsai-client'
-  all_files = `git ls-files -z`.split("\x0")
   s.files = %w(bonsai_client.gemspec) + Dir["*.md", "bin/*", "lib/**/*.rb"]
   s.executables = %w(bonsai_client)
   s.require_paths = %w(lib)
