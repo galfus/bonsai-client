@@ -5,6 +5,8 @@
 
 ![Logo of Bonsai](bonsai.png)
 
+Client for Bonsai server.
+
 ### NOTE
 
 This gem is at an early stage of development. Please do not use it already.
@@ -59,10 +61,16 @@ Create a new version:
 rake release
 ```
 
-Push commits to git repositories (GitLab and GitHub)
+Push commits to git repositories (GitLab and GitHub):
 
 ```bash
 rake push
+```
+
+Build gem file into pkg folder:
+
+```bash
+rake build
 ```
 
 Publish the current gem version to Rubygems:

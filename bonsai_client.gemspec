@@ -15,11 +15,9 @@ Gem::Specification.new do |s|
   s.licenses = ['MIT']
   s.homepage = 'https://gitlab.com/galfuslab/bonsai-client'
   all_files = `git ls-files -z`.split("\x0")
-  s.files = all_files
-    .reject { |f| f.match(%r{^(test|spec|features|doc|tmp|pkg)/}) }
-  s.executables << 'bonsai_client'
-  s.bindir = 'bin'
-  s.require_paths = ['lib']
+  s.files = %w(bonsai_client.gemspec) + Dir["*.md", "bin/*", "lib/**/*.rb"]
+  s.executables = %w(bonsai_client)
+  s.require_paths = %w(lib)
   s.add_runtime_dependency 'rest-client', '~> 2.0'
   s.add_runtime_dependency 'thor', '~> 0.19'
   s.add_development_dependency 'bundler', "~> 1.12"
