@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
+
+require 'bonsai_client'
+require 'thor'
+
+module BonsaiClient
+  class AppCmdLine < Thor
+    desc "upload", "Upload a file to Bonsai server"
+    option :url, type: :string, required: true
+    option :client_id, type: :string, required: true
+    option :path, type: :string, required: true
+    long_desc <<-LONGDESC
+
+    > $ bonsai_client upload --url=http://bonsai-server.com --path=/path/to/file --client_id=test
+
+    LONGDESC
+    def upload
+      bonsai = BonsaiClient.create(
+        url: options[:url],
+        client_id: options[:client_id],
+      )
+      response = bonsai.upload(path: options[:path])
+      puts response.to_json
+    end
+  end
+
+  AppCmdLine.start(ARGV)
+end
+

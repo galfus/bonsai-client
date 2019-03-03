@@ -21,7 +21,7 @@ gem install bonsai_client
 Upload a file:
 
 ```bash
-bonsai_client upload --url="http://bonsai-server.com" --path="/path/to/file"
+bonsai_client upload --url="http://bonsai-server.com" --path=/path/to/file --client-id=xxx
 ```
 
 ## Usage in ruby code
