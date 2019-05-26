@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+## [0.3.0] - 2019-05-26
+* Add client secret.
+
 ## [0.2.1] - 2019-03-03
 * Fix bonsai_client command installation.
 
