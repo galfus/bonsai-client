@@ -9,16 +9,18 @@ module BonsaiClient
     desc "upload", "Upload a file to Bonsai server"
     option :url, type: :string, required: true
     option :client_id, type: :string, required: true
+    option :client_secret, type: :string, required: true
     option :path, type: :string, required: true
     long_desc <<-LONGDESC
 
-    > $ bonsai_client upload --url=http://bonsai-server.com --path=/path/to/file --client_id=test
+    > $ bonsai_client upload --url=http://bonsai-server.com --path=/path/to/file --client_id=xxx --client-secret=yyy
 
     LONGDESC
     def upload
       bonsai = BonsaiClient.create(
         url: options[:url],
         client_id: options[:client_id],
+        client_secret: options[:client_secret],
       )
       response = bonsai.upload(path: options[:path])
       puts response.to_json

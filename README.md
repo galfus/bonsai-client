@@ -30,7 +30,7 @@ rbenv rehash
 Upload a file:
 
 ```bash
-bonsai_client upload --url="http://xxx.yyy" --path=/path/to/file --client-id=zzz
+bonsai_client upload --url="http://bonsai-server-instance.com" --path=/path/to/file --client-id=xxx --client-secret=yyy
 ```
 
 ## Usage in ruby code
@@ -40,7 +40,7 @@ bonsai_client upload --url="http://xxx.yyy" --path=/path/to/file --client-id=zzz
 require 'bonsai-client'
 
 # Create a new instance of Bonsai client:
-bonsai = BonsaiClient.new(url: 'http://xxx.yyy', client_id: 'zzz')
+bonsai = BonsaiClient.new(url: 'http://bonsai-server-instance.com', client_id: 'xxx', client_secret: 'yyy')
 
 # Upload a file to a Bonsai server:
 response = bonsai.upload(path: '/path/to/my-file')
@@ -56,8 +56,8 @@ src3 = bonsai.thumbnail_url(checksum: response[:data][:file_checksum]), size: :m
 ### Test
 
 ```bash
-BONSAI_SERVER_URL=https://xxx.yyy BONSAI_CLIENT_ID=zzz bundle exec rake test
-BONSAI_SERVER_URL=https://xxx.yyy BONSAI_CLIENT_ID=zzz bundle exec rake test TEST=test/upload_file_test.rb
+BONSAI_SERVER_URL=https://bonsai-server-instance.com BONSAI_CLIENT_ID=xxx BONSAI_CLIENT_SECRET=yyy rake test
+BONSAI_SERVER_URL=https://bonsai-server-instance.com BONSAI_CLIENT_ID=xxx BONSAI_CLIENT_SECRET=yyy rake test TEST=test/upload_file_test.rb
 ```
 
 ### Rake tasks
